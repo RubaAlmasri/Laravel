@@ -4,9 +4,7 @@
 
 
 @section('content')
-<?php
-$result = 0;
-?>
+
 <section class="vh-100 gradient-custom" style="margin-bottom: 10%;">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -22,12 +20,12 @@ $result = 0;
                             <form class="mb-5" method="get" action="">
                                 <div class="form-outline form-white mb-4">
                                     <label class="form-label">Number 1</label>
-                                    <input type="text" name="num1" class="form-control form-control-lg" />
+                                    <input type="number" name="num1" class="form-control form-control-lg" />
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
                                     <label class="form-label" for="typePasswordX">Number 2</label>
-                                    <input type="text" name="num2" class="form-control form-control-lg" />
+                                    <input type="number" name="num2" class="form-control form-control-lg" />
                                 </div>
 
                                 <input type="submit" name="operator" value="Sum" />
@@ -35,36 +33,9 @@ $result = 0;
                                 <input type="submit" name="operator" value="Multiplication" />
                                 <input type="submit" name="operator" value="Division" />
                             </form>
-                            <?php
-                            if (isset($_GET['operator'])) {
-                                $FirstNumber = request('num1');
-                                $SecondNumber = request('num2');
-                                $operator = request('operator');
-                                $result = 0;
-                                if (is_numeric($FirstNumber) && is_numeric($SecondNumber)) {
-                                    switch ($operator) {
-                                        case "Sum":
-                                            $result = $FirstNumber + $SecondNumber;
-                                            break;
-                                        case "Subtraction":
-                                            $result = $FirstNumber - $SecondNumber;
-                                            break;
-                                        case "Multiplication":
-                                            $result = $FirstNumber * $SecondNumber;
-                                            break;
-                                        case "Division":
-                                            if ($SecondNumber != 0) {
-                                                $result = $FirstNumber / $SecondNumber;
-                                            } else {
-                                                $result = 'Division by zero';
-                                            }
-                                    }
-                                }
-                            }
-                            ?>
                             <div class="form-outline form-white mb-4">
                                 <label class="form-label" for="typePasswordX">The answer is</label>
-                                <input readonly="readonly" name="result" class="form-control form-control-lg" value="<?php echo $result; ?>" />
+                                <input readonly="readonly" name="result" class="form-control form-control-lg" value="{{$answer}}" />
                             </div>
                         </div>
                     </div>

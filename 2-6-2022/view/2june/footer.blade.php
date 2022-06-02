@@ -25,23 +25,7 @@
       <!-- Grid column -->
       <div class="col-md-3 mb-md-0 mb-3">
 
-        <!-- Links -->
-        <h5 class="text-uppercase">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
+        
 
       </div>
       <!-- Grid column -->
@@ -54,16 +38,16 @@
 
         <ul class="list-unstyled">
           <li>
-            <a href="#!">Link 1</a>
+            <a href="home">Home</a>
           </li>
           <li>
-            <a href="#!">Link 2</a>
+            <a href="calculator">Calculator</a>
           </li>
           <li>
-            <a href="#!">Link 3</a>
+            <a href="login">Login</a>
           </li>
           <li>
-            <a href="#!">Link 4</a>
+            <a href="">Link</a>
           </li>
         </ul>
 
@@ -78,7 +62,7 @@
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3" style="background-color: black;">© 2022 Copyright:
-    <a href="/"> MDBootstrap.com</a>
+    <a href="home"> Almasri</a>
   </div>
   <!-- Copyright -->
 

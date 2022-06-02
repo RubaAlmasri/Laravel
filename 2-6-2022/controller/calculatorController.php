@@ -15,8 +15,29 @@ class calculatorController extends Controller
      */
     public function calculator()
     {
+        $FirstNumber = request('num1');
+        $SecondNumber = request('num2');
+        $operator = request('operator');
+        $result = 0;
+        switch ($operator) {
+            case "Sum":
+                $result = $FirstNumber + $SecondNumber;
+                break;
+            case "Subtraction":
+                $result = $FirstNumber - $SecondNumber;
+                break;
+            case "Multiplication":
+                $result = $FirstNumber * $SecondNumber;
+                break;
+            case "Division":
+                if ($SecondNumber != 0) {
+                    $result = $FirstNumber / $SecondNumber;
+                } else {
+                    $result = 'Division by zero';
+                }
+        }
 
-        return view('2june/calculator', ['msg'=>'hello']);
+        return view('2june/calculator', ['answer' => $result]);
     }
 
     /**

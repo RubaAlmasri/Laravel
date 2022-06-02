@@ -16,7 +16,7 @@ class MasterController extends Controller
     public function homepage()
     {
         // $data=['name'=>'Ruba'];
-        return view('2june/home',['name'=>'Ruba']);
+        return view('2june/home',['name'=>'Hello']);
     }
 
     /**
