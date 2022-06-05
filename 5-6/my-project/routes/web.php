@@ -56,7 +56,6 @@ use App\Http\Controllers\validation;
 // Route::get('/login', [loginController::class,'loginpage']);
 // Route::get('/calculator', [calculatorController::class,'calculator']);
 
-// Route::get('register', [validation::class,'index']);
 
 Route::resource('register', validation::class);
 

@@ -20,21 +20,33 @@
             <div class="col-md-5 bg" style="background-image: url('https://wallpapers.com/images/high/alps-mountain-animated-forest-iphone-wallpaper-bjj-journal-csesmjrj177waa0f.jpg');"></div>
             <div class="col-md-7" style="background-color: white;">
                 <h4 style="text-align:center ; margin-top: 5%;">Register</h4>
-                <form class="mb-5" method="post" action="{{route('register.valid')}}">
+                <form class="mb-5" method="post" action="{{route('register.store')}}">
                     @csrf
                     <div class="row" style="padding-left: 10%; padding-right: 10%; padding-top: 5%;">
                         <div class="col-md-12 form-group ">
                             <input type="text" class="@error('name') is-invalid @enderror form-control" name="name" placeholder="Username" style="border:1px solid; border-radius: 10px;">
+                            @error('name')
+                            <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
                         </div>
                         <div class="col-md-12 form-group">
-                            <input type="email" class="@error('email') is-invalid @enderror form-control" name="email" placeholder="Email address" style="border:1px solid; border-radius: 10px;">
+                            <input type="email" class="@error('email') is-invalid @enderror form-control" name="email" placeholder="Email" style="border:1px solid; border-radius: 10px;">
+                            @error('email')
+                            <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
                         </div>
 
                         <div class="col-md-12 form-group">
-                            <input type="text" class="@error('phone') is-invalid @enderror form-control" name="phone" placeholder="Password" style="border:1px solid; border-radius: 10px;">
+                            <input type="text" class="@error('phone') is-invalid @enderror form-control" name="phone" placeholder="Phone" style="border:1px solid; border-radius: 10px;">
+                            @error('phone')
+                            <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
                         </div>
                         <div class="col-md-12 form-group">
-                            <input type="text" class="@error('address') is-invalid @enderror form-control" name="address" placeholder="Confirm password" style="border:1px solid; border-radius: 10px;">
+                            <input type="text" class="@error('address') is-invalid @enderror form-control" name="address" placeholder="Address" style="border:1px solid; border-radius: 10px;">
+                            @error('address')
+                            <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
                         </div>
 
                         <div class="col-md-12 form-group ">

@@ -12,23 +12,23 @@ class validation extends Controller
     // {
     //    return view('crud');
     // }
-    public function index()
+     public function index()
     {
-        $data=employee::all();
-        return view('5-6\crud');
+        $data = employee::all();
+        return view('5-6/register', compact('data'));
     }
 
-    public function valid(Request $request)
+    public function store(Request $request)
     {
        $data = $request->validate([
            'name' => 'required',
-           'email' => 'required|unique:employee|max:255',
-           'phone' => 'required|unique:employee|min:10|regex:/^([0-9\s\-\+\(\)}*)$/',
+           'email' => 'required|unique:employees|max:255',
+           'phone' => 'required|unique:employees|min:10|regex:/^([0-9\s\-\+\(\)]*)$/',
            'address' => 'required'
        ]);
 
        $employee = employee::create($request->all());//save all inputs
-       return redirect('register.index')->with('success','user added successfully');
+       return redirect()->route('crud.index')->with('success','User added successfully');
     }
 
 }
